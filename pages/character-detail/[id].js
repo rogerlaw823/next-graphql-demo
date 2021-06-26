@@ -4,6 +4,7 @@ import {ApolloClient, InMemoryCache, gql} from '@apollo/client';
 import { Flex, Text } from '@chakra-ui/react';
 import { SimpleGrid } from '@chakra-ui/react';
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 export default function Home(results) {
     const [character] = useState(results.character);
@@ -18,7 +19,7 @@ export default function Home(results) {
             <h1>Status: {character.status}</h1>
             <h1>Gender: {character.gender}</h1>
             <h1>Species: {character.species}</h1>
-            <a href="/"><Text align="right" color="blue">Back</Text></a>
+            <Text align="right" color="blue"><Link href="/">Back</Link></Text>
           </div>
         </SimpleGrid>
       </Flex>
@@ -27,7 +28,7 @@ export default function Home(results) {
 
 export async function getStaticPaths() {
   var paths = [];
-  for (var idx = 0; idx <= 1000; idx++) {
+  for (var idx = 1; idx <= 671; idx++) {
     paths[idx] = {params: {id: idx.toString()}};
   }
 
