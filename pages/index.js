@@ -50,7 +50,7 @@ export default function Home() {
         <Character characters={characters} />
       </Box>
       <footer className={styles.footer}>
-          Roger Law demo 20210626
+          Roger Law demo
       </footer>
     </Flex>
   )
